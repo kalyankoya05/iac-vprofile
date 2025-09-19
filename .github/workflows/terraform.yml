@@ -1,5 +1,6 @@
 name: "VProfile-IAC"
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -42,6 +43,7 @@ jobs:
 
       - name: Terraform Destroy
         run: terraform destroy -auto-approve -input=false
+        # This will destroy all AWS resources
 
       # - name: "Terraform Format"
       #   id: fmt
